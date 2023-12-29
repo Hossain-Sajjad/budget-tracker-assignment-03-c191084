@@ -23,6 +23,25 @@ export default function IncomeList() {
                   <span className="text-green-600">
                     {formatMoney(income.value)}
                   </span>
+                  <span className="ml-2 hidden cursor-pointer font-medium text-black-500 group-hover:inline-block"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              console.log(entries);
+                              console.log(income.id);
+                              function getUserInput() {
+                                const title = prompt("Enter Title:");
+                                const value = prompt("Enter value:");
+                                income.title = title;            
+                                income.value = value;
+                                setEntries([
+                                  ...entries
+                                ]);                                                     
+                            }
+                            getUserInput();
+                            }}
+                  >
+                    Edit
+                  </span>
                   <span className="ml-2 hidden cursor-pointer font-medium text-red-500 group-hover:inline-block"
                             onClick={(e) => {
                               e.preventDefault();

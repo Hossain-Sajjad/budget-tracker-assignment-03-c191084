@@ -22,6 +22,25 @@ export default function ExpenseList() {
                   <span className="text-red-600">
                     -{formatMoney(item.value)}
                   </span>
+                  <span className="ml-2 hidden cursor-pointer font-medium text-black-500 group-hover:inline-block"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              console.log(entries);
+                              console.log(item.id);
+                              function getUserInput() {
+                                const title = prompt("Enter Title:");
+                                const value = prompt("Enter value:");
+                                item.title = title;            
+                                item.value = value;
+                                setEntries([
+                                  ...entries
+                                ]);                                                     
+                            }
+                            getUserInput();
+                            }}
+                  >
+                    Edit
+                  </span>
                   <span className="ml-2 hidden cursor-pointer font-medium text-red-500 group-hover:inline-block"
                             onClick={(e) => {
                               e.preventDefault();
