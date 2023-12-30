@@ -31,7 +31,7 @@ export default function ExpenseList() {
                                 const title = prompt("Enter Title:");
                                 const value = prompt("Enter value:");
                                 item.title = title;            
-                                item.value = value;
+                                item.value = parseFloat(value);
                                 setEntries([
                                   ...entries
                                 ]);                                                     

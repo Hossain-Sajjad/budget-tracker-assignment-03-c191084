@@ -32,7 +32,7 @@ export default function IncomeList() {
                                 const title = prompt("Enter Title:");
                                 const value = prompt("Enter value:");
                                 income.title = title;            
-                                income.value = value;
+                                income.value = parseFloat(value);
                                 setEntries([
                                   ...entries
                                 ]);                                                     
